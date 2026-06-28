@@ -1,0 +1,6 @@
+{
+  "name": "Resume & CV Document Builder",
+  "description": "A professional full-suite CV and resume builder featuring high-fidelity PDF and Word exports, multi-page interactive layout management, customizable styling templates, and live document previewing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

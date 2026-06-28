@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), system-ui, -apple-system, sans-serif;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0 !important;
+  }
+
+  /* Clean up document root and bodies */
+  html, body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    overflow: visible !important;
+  }
+
+  /* Hide UI editor features and other views */
+  .no-print, 
+  button, 
+  header, 
+  footer, 
+  nav, 
+  aside, 
+  input, 
+  textarea, 
+  select,
+  .fixed,
+  [role="dialog"] {
+    display: none !important;
+  }
+
+  /* De-style layout ancestors so the preview is not clipped or hidden */
+  main,
+  .min-h-screen,
+  [key="builder-card"],
+  .grid,
+  .lg\:col-span-12,
+  .lg\:col-span-5 {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Force display of the preview container specifically */
+  #printable_resume_root_wrapper {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  #smart_resume_preview_card_wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 24px !important;
+  }
+
+  /* Preserve background colors and images in all browsers */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
+
+/* ==========================================
+   WINDOWS 95 CLASSIC THEME FULL CONTRAST Overrides
+   (Excluding actual compiled resume viewports)
+   ========================================== */
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) h1,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) h2,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) h3,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) h4,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) h5,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) h6,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) p,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) span,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) label,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) div,
+.theme-windows-95:not(#printable_resume_root_wrapper):not(#smart_resume_preview_card_wrapper) li {
+  /* Make sure all font-mono/display text gets full opacity black color */
+  color: #000000 !important;
+}
+
+/* Make sure SVGs and custom icons are full opacity black */
+.theme-windows-95 svg:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *) {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* Authentic beveled 3D windows 95 buttons */
+.theme-windows-95 button:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *) {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border-top: 2px solid #ffffff !important;
+  border-left: 2px solid #ffffff !important;
+  border-right: 2px solid #5a5a5a !important;
+  border-bottom: 2px solid #5a5a5a !important;
+  border-radius: 0px !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  text-shadow: none !important;
+  font-family: inherit !important;
+}
+
+.theme-windows-95 button:hover:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *) {
+  background-color: #d8d8d8 !important;
+}
+
+.theme-windows-95 button:active:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *) {
+  border-top-color: #5a5a5a !important;
+  border-left-color: #5a5a5a !important;
+  border-right-color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+  padding-top: 3px !important;
+  padding-left: 3px !important;
+}
+
+/* Allow clean background for active settings items or tab lists */
+.theme-windows-95 button[class*="bg-[#000080]"],
+.theme-windows-95 button.bg-\[\#000080\]:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *) {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  border-top: 2px solid #000040 !important;
+  border-left: 2px solid #000040 !important;
+  border-right: 2px solid #808080 !important;
+  border-bottom: 2px solid #808080 !important;
+}
+
+.theme-windows-95 button[class*="bg-[#000080]"] svg,
+.theme-windows-95 button.bg-\[\#000080\] svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Make inputs, select options, and textareas clear and solid white bg inside theme-windows-95 */
+.theme-windows-95 input:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *),
+.theme-windows-95 select:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *),
+.theme-windows-95 textarea:not(#printable_resume_root_wrapper *):not(#smart_resume_preview_card_wrapper *) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-top: 2px solid #5a5a5a !important;
+  border-left: 2px solid #5a5a5a !important;
+  border-right: 2px solid #ffffff !important;
+  border-bottom: 2px solid #ffffff !important;
+  border-radius: 0px !important;
+}
