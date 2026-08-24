@@ -19,7 +19,15 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'Resume Builder & CV Document Creator',
   description: 'An elegant, offline-ready professional resume and CV document builder featuring high-fidelity PDF and Word exports, customizable templates, and smart assistance.',
-  manifest: '/manifest.json',
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: { url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' },
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
